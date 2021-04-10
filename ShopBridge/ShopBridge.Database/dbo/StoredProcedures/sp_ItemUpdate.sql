@@ -1,9 +1,10 @@
 ﻿CREATE PROCEDURE [dbo].[sp_ItemUpdate]
+	@ItemId int,
 	@Name nvarchar(50),
 	@Description nvarchar(250),
 	@Price money,
 	@Quantity int,
-	@ItemId int output
+	@ItemDetailId int output
 AS
 BEGIN
 
@@ -14,5 +15,8 @@ SET NOCOUNT ON
 	 [Price]=@Price,
 	 [Quantity]=@Quantity
 	 WHERE ItemId=@ItemId
+
+select @ItemDetailId=@ItemId
+From  [dbo].[Item]
 
 END

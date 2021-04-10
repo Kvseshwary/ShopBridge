@@ -44,13 +44,14 @@ namespace ShopBridge.DataLibrary.Data
         public async Task<int> UpdateItem(ItemModel itemModel)
         {
             DynamicParameters p = new DynamicParameters();
+            p.Add("ItemId", itemModel.ItemId);
             p.Add("Name", itemModel.Name);
             p.Add("Description", itemModel.Description);
             p.Add("Price", itemModel.Price);
             p.Add("Quantity", itemModel.Quantity);
-            p.Add("ItemId", DbType.Int32, direction: ParameterDirection.Output);
-            await _dataAccess.SaveData("dbo.sp_ItemUpdate", p, _connectionStringData.SqlConnectionName);
-            return p.Get<int>("ItemId");
+            p.Add("ItemDetailId", DbType.Int32, direction: ParameterDirection.Output);
+            await _dataAccess.SaveData("dbo.sp_ItemUpdate", p,_connectionStringData.SqlConnectionName);
+            return p.Get<int>("ItemDetailId");
         }
 
 
@@ -79,6 +80,8 @@ namespace ShopBridge.DataLibrary.Data
 
             return recs.FirstOrDefault();
         }
+
+
     }
 }
 

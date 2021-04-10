@@ -59,6 +59,14 @@ namespace ShopBridge.Controllers
         {
             return  await _itemData.GetItem();
         }
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Put([FromBody] ItemModel itemModel)
+        {
+            int id = await _itemData.UpdateItem(itemModel);
+            return Ok(new { itemId = id });
+        }
 
     }
 }
