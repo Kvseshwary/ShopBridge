@@ -30,7 +30,6 @@ namespace ShopBridge.Controllers
             return Ok(new { Id =id});
         }
 
-
         [HttpGet("{Id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -66,6 +65,15 @@ namespace ShopBridge.Controllers
         {
             int id = await _itemData.UpdateItem(itemModel);
             return Ok(new { itemId = id });
+        }
+
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _itemData.DeleteItem(id);
+            return Ok();
         }
 
     }

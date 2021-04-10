@@ -54,7 +54,7 @@ namespace ShopBridge.DataLibrary.Data
             return p.Get<int>("ItemDetailId");
         }
 
-
+        
         public Task<int> DeleteItem(int ItemId)
         {
 
