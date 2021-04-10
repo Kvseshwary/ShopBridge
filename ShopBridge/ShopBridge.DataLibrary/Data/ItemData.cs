@@ -71,7 +71,7 @@ namespace ShopBridge.DataLibrary.Data
 
         public async Task<ItemModel> GetItemById(int ItemId)
         {
-            var recs = await _dataAccess.LoadData<ItemModel, dynamic>("dbo.ItemGetById",
+            var recs = await _dataAccess.LoadData<ItemModel, dynamic>("dbo.sp_ItemGetById",
                 new
                 {
                     ItemId = ItemId
