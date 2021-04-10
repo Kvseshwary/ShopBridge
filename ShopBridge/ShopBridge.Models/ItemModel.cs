@@ -16,7 +16,7 @@ namespace ShopBridge.Models
         public string Name { get; set; }
         public string Description { get; set; }
         [Required]
-        [Range(1,50,ErrorMessage ="Value lies outside of 1 to 50 range")]
+        [Range(1,500,ErrorMessage ="Price lies outside of 1 to 500 range")]
         public decimal Price { get; set; }
         [Required]
         [Range(1,20,ErrorMessage ="You can add upto 20 quantities")]

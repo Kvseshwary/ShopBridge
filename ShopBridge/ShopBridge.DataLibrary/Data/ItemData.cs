@@ -36,7 +36,7 @@ namespace ShopBridge.DataLibrary.Data
             p.Add("Price", itemModel.Price);
             p.Add("Quantity", itemModel.Quantity);
             p.Add("ItemId", DbType.Int32, direction: ParameterDirection.Output);
-            await _dataAccess.SaveData("dbo.sp_ItemInser", p, _connectionStringData.SqlConnectionName);
+            await _dataAccess.SaveData("dbo.sp_ItemInsert", p, _connectionStringData.SqlConnectionName);
 
             return p.Get<int>("ItemId");
         }
