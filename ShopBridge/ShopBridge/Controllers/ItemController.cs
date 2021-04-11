@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ShopBridge.Attributes;
 using ShopBridge.DataLibrary.Data;
 using ShopBridge.Models;
 
@@ -30,7 +31,8 @@ namespace ShopBridge.Controllers
             return Ok(new { Id =id});
         }
 
-        [HttpGet("{Id}")]
+        [HttpGet]
+        //[HttpGet("{Id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -39,7 +41,8 @@ namespace ShopBridge.Controllers
         {
             if(Id==0)
             {
-                return BadRequest();
+                throw new ArgumentException(
+                    $"ID can't be zero{ Id}", nameof(Id));
             }
             
             var Item = await _itemData.GetItemById(Id);
@@ -56,7 +59,8 @@ namespace ShopBridge.Controllers
         [HttpGet]
         public async Task <List<ItemModel>> GetAll()
         {
-            return  await _itemData.GetItem();
+            
+             return  await _itemData.GetItem();
         }
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]

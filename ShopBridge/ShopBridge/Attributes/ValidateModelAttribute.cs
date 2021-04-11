@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace ShopBridge.Controllers
+namespace ShopBridge.Attributes
 {
     public class ValidateModelAttribute:ActionFilterAttribute
     {
