@@ -1,0 +1,45 @@
+12.40PM :Started TimVideo
+
+Build Sql Database
+
+SSDT(Sql Server Database Project)
+Dapper:Light weight easy framework
+
+Database & Storedprocedure creation :9.30PM
+
+Time:11PM Till 
+
+-------------------------------------
+
+Publish the database
+
+Updatw the webconfig 
+
+Then Run
+
+-------------------------
+
+Publish the database
+RightClick the ShopBridge.Database
+Click Publish
+Give Name as Product
+
+.Net Standared CL allows to work with .net framework ,.Net Core ,Xamarin
+
+---------------------
+Packages:Dapper
+Microsoft.Data.SqlClient
+Microsoft.Extensions.Configuration
+
+-----------------------------------
+
+Unit test for IDataAccess without affecting database
+
+MODIFICATION COnnectionstring
+
+ConnectionStringData in datalibra
+
+-----------------------------------------------
+Time 4/10/2021
+9AM-12PM -Post Request 
+
